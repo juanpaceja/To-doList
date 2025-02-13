@@ -62,7 +62,7 @@ input{
     border-color: black;
     outline: none;
     padding: 16px 50px;
-    background: #dd4242;
+    background: #ff3c15;
     color: #fff;
     font-size: 16px;
     cursor: pointer;
@@ -70,6 +70,30 @@ input{
 }
 #DeleteBtn:hover{
     opacity: 90%;
+    background: #ff0000;
+    color: #000000;
+}
+#list-container{
+    overflow: auto;
+}
+ul {
+    width: 100%;
+    height: 180px;
+    scroll-behavior: smooth;
+}
+ul::-webkit-scrollbar {
+    width: 10px;
+}
+
+ul::-webkit-scrollbar-track {
+    background: rgb(248, 40, 252);
+    border-radius: 5px;
+    border: 2px solid black;
+}
+
+ul::-webkit-scrollbar-thumb {
+    background: black;
+    border-radius: 5px;
 }
 ul li{
     list-style: none;
