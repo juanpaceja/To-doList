@@ -3,6 +3,8 @@
     padding: 0;
     box-sizing: border-box;
     font-family: Arial, Helvetica, sans-serif;
+    overflow-wrap: break-word;
+
 }
 #Principal-div{
     width: 100%;
@@ -58,20 +60,20 @@ input{
     opacity: 90%;
 }
 #DeleteBtn{
-    border: 2px solid black;
-    border-color: black;
     outline: none;
-    padding: 16px 50px;
+    padding: 10px;
     background: #ff3c15;
     color: #fff;
     font-size: 16px;
     cursor: pointer;
     border-radius: 10px;
+    border: none;
 }
 #DeleteBtn:hover{
     opacity: 90%;
     background: #ff0000;
     color: #000000;
+    border: 2px solid black;
 }
 #list-container{
     overflow: auto;
@@ -81,7 +83,7 @@ ul {
     height: 180px;
     scroll-behavior: smooth;
 }
-ul::-webkit-scrollbar {
+ul::-webkit-scrollbar { 
     width: 10px;
 }
 
