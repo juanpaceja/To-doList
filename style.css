@@ -47,7 +47,7 @@ input{
 .fade{
     opacity: 0;
 }
-button{
+#Click {
     border: none;
     outline: none;
     padding: 16px 50px;
@@ -57,7 +57,7 @@ button{
     cursor: pointer;
     border-radius: 40px;
 }
-button:hover{
+#Click:hover {
     opacity: 90%;
 }
 ul li{

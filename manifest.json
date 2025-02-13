@@ -1,0 +1,12 @@
+{
+    "name": "#To-do list",
+    "short_name": "#To-Do list",
+    "description": "Testing Web page of a To-Do list",
+    "background_color": "#000000",
+    "theme_color": "#000000",
+    "orientation": "portrait",
+    "display": "standalone",
+    "start_url": "./?utm_source=web_app_manifest",
+    "scope": "./",
+    "lang": "es-MX"
+}
