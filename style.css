@@ -18,7 +18,7 @@
     padding: 40px 30px 70px;
     border-radius: 10px;
 }
-#second-div h1{
+#Second-div h1{
     color: black;
     display: flex;
     align-items: center;
@@ -41,13 +41,10 @@ input{
     padding: 10px;
     transition: opacity 0.5s ease-in-out;
 }
-input{
-    transition: opacity 0.5s ease-in-out;
-}
 .fade{
     opacity: 0;
 }
-#Click {
+#AddBtn {
     border: none;
     outline: none;
     padding: 16px 50px;
@@ -57,7 +54,21 @@ input{
     cursor: pointer;
     border-radius: 40px;
 }
-#Click:hover {
+#AddBtn:hover {
+    opacity: 90%;
+}
+#DeleteBtn{
+    border: 2px solid black;
+    border-color: black;
+    outline: none;
+    padding: 16px 50px;
+    background: #dd4242;
+    color: #fff;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 10px;
+}
+#DeleteBtn:hover{
     opacity: 90%;
 }
 ul li{

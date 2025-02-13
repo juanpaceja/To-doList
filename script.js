@@ -1,13 +1,12 @@
 const inputbox = document.getElementById("Input-box");
 const listContainer = document.getElementById("list-container");
-const ButtonContainer = document.getElementById("Delete-all");
+const deleteBtn = document.getElementById("DeleteBtn");
 
-
-//function to add a task//
-function addTask(){
-    if(inputbox.value === ''){
-        alert("you must write something!");
-    } else{
+// Function to add a task
+function addTask() {
+    if (inputbox.value === '') {
+        alert("You must write something!");
+    } else {
         let li = document.createElement("li");
         li.innerHTML = inputbox.value;
         listContainer.appendChild(li);
@@ -21,52 +20,58 @@ function addTask(){
     saveData();
 }
 
-//function to mark as checked the tasks//
-listContainer.addEventListener("click", function (e){
-    if(e.target.tagName === "LI"){
+// Button to delete all tasks with confirmation
+function deleteAllTasks() {
+    const confirmDelete = confirm("Are you sure that you want to delete all the tasks?");
+    if (confirmDelete) {
+        listContainer.innerHTML = "";
+        localStorage.removeItem("data");
+    }
+}
+
+deleteBtn.addEventListener("click", deleteAllTasks);
+
+// Function to mark tasks as checked
+listContainer.addEventListener("click", function (e) {
+    if (e.target.tagName === "LI") {
         e.target.classList.toggle("checked");
         saveData();
-    }
-    else if(e.target.tagName === "SPAN"){
+    } else if (e.target.tagName === "SPAN") {
         e.target.parentElement.remove();
         saveData();
-        checkDeleteAllButton();
     }
-},false );
+}, false);
 
-//Local storage functions//
-function saveData(){
+// Local storage functions
+function saveData() {
     localStorage.setItem("data", listContainer.innerHTML);
 }
 
-function showtask(){
+function showtask() {
     listContainer.innerHTML = localStorage.getItem("data") || "";
 }
 showtask();
 
-//Dinamic placeholders//
-const placeholders = ["Do laundry", "walk the dog", "Buy groceries", "change oil"];
+// Dynamic placeholders
+const placeholders = ["Do laundry", "Walk the dog", "Buy groceries", "Change oil"];
 let index = 0;
-const input = document.getElementById("Input-box");
 
 function changePlaceholder() {
-    if (input.value === "") {
-        input.classList.add("fade"); 
+    if (inputbox.value === "") {
+        inputbox.classList.add("fade"); 
         setTimeout(() => {
             index = (index + 1) % placeholders.length;
-            input.placeholder = placeholders[index];
-            input.classList.remove("fade"); 
+            inputbox.placeholder = placeholders[index];
+            inputbox.classList.remove("fade"); 
         }, 500);
     }
 }
 
-setInterval(changePlaceholder, 2000)
+setInterval(changePlaceholder, 2000);
 
-//Add task when enter key is pulsed, when the input is selected//
-document.getElementById("Input-box")
-    .addEventListener("keyup", function(event) {
-    event.preventDefault();
-    if (event.keyCode === 13) {
-        document.getElementById("Click").click();
+// Add task when Enter key is pressed
+inputbox.addEventListener("keyup", function(event) {
+    if (event.key === "Enter") {
+        document.getElementById("AddBtn").click();
     }
 });
