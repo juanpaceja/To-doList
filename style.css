@@ -73,7 +73,7 @@ input{
     opacity: 90%;
     background: #ff0000;
     color: #000000;
-    border: 2px solid black;
+    outline: 2px solid black;
 }
 #list-container{
     overflow: auto;
