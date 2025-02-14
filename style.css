@@ -3,8 +3,6 @@
     padding: 0;
     box-sizing: border-box;
     font-family: Arial, Helvetica, sans-serif;
-    overflow-wrap: break-word;
-
 }
 #Principal-div{
     width: 100%;
@@ -73,7 +71,7 @@ input{
     opacity: 90%;
     background: #ff0000;
     color: #000000;
-    border: 2px solid black;
+    outline: 2px solid black;
 }
 #list-container{
     overflow: auto;
@@ -90,7 +88,7 @@ ul::-webkit-scrollbar {
 ul::-webkit-scrollbar-track {
     background: rgb(248, 40, 252);
     border-radius: 5px;
-    border: 2px solid black;
+    border: 1px solid black;
 }
 
 ul::-webkit-scrollbar-thumb {
@@ -100,21 +98,24 @@ ul::-webkit-scrollbar-thumb {
 ul li{
     list-style: none;
     font-size: 17px;
-    padding: 12px 8px 12px 50px;
+    padding: 16px 40px 16px 50px;
     user-select: none;
     cursor: pointer;
     position: relative;
+    word-wrap: break-word;
+    max-width: 100%;
+    overflow-wrap: break-word;
 }
 ul li::before{
     content: '';
     position: absolute;
+    padding: auto;
     height: 28px;
     width: 28px;
-    border-radius: 50%;
     background-image: url(Images/unchecked-box.png);
     background-size: cover;
     background-position: center;
-    top: 12px;
+    top: 13px;
     left: 8px;
 }
 ul li.checked{
@@ -127,7 +128,7 @@ ul li.checked::before{
 ul li span{
     position: absolute;
     right: 0;
-    top: 5px;
+    top: 8px;
     width: 40px;
     height: 40px;
     font-size: 22px;
